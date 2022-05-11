@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- STYLESHEET -->
+        <style type="text/css">
+            :root {
+                --ion-background-color: rgb(22, 22, 24);
+            }
+            ion-app {
+                background-color: black;
+            }
+            ion-button {
+                width: 70vw;
+                font-size: x-large;
+            }
+
+            /* ion-card {
+                background-color: rgb(120, 186, 207);
+            } */
+
+            #map-pic {
+                width: 100%;
+                object-fit: cover;
+            }
+
+            #info {
+                font-size: 2rem;
+            }
+        </style>
+        <!-- <link rel="stylesheet" href="style.css" /> -->
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- vvvvvv ionic CDN links -->
+        <script
+            type="module"
+            src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"
+        ></script>
+        <script
+            nomodule
+            src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"
+        ></script>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"
+        />
+        <!-- ^^^^^^^ ionic CDN links -->
+        <title>Where's The 60?</title>
+    </head>
+    <body>
+        <ion-app style="background-color: rgb(56, 128, 255)">
+            <ion-header>
+                <ion-toolbar color="primary">
+                    <ion-title style="font-size: 1.5rem"
+                        >Where's The 60?</ion-title
+                    >
+                </ion-toolbar>
+            </ion-header>
+            <!-- HEAD ABOVE, BODY BELOW -->
+            <ion-content>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col size-md="6" offset-md="3">
+                            <ion-item id="map-pic">
+                                <!-- <ion-item> -->
+                                <img src="img/the60.png" />
+                                <!-- </ion-item> -->
+                            </ion-item>
+                            <ion-card id="info"></ion-card>
+                            <ion-card>
+                                <ion-card-header>
+                                    <!-- <ion-card-title>
+                                        Choose a Destination
+                                    </ion-card-title> -->
+                                </ion-card-header>
+                                <ion-card-content>
+                                    <!-- <ion-item>
+                                        <ion-label position="floating"
+                                            >Expense Reason</ion-label
+                                        >
+                                        <ion-input
+                                            type="text"
+                                            id="input-reason"
+                                        ></ion-input>
+                                    </ion-item>
+                                    <ion-item>
+                                        <ion-label position="floating"
+                                            >Expense Amount</ion-label
+                                        >
+                                        <ion-input
+                                            type="number"
+                                            id="input-amount"
+                                        ></ion-input>
+                                    </ion-item> -->
+                                    <div class="ion-text-center">
+                                        <ion-button color="warning" id="to-work"
+                                            ><ion-icon
+                                                slot="start"
+                                                name="code-working"
+                                            ></ion-icon
+                                            >Work</ion-button
+                                        >
+                                        <ion-button color="success" id="to-home"
+                                            ><ion-icon
+                                                slot="start"
+                                                name="home"
+                                            ></ion-icon>
+                                            Home</ion-button
+                                        >
+                                    </div>
+                                </ion-card-content>
+                            </ion-card>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row
+                        ><ion-col size-md="6" offset-md="3" id="expenses-list">
+                            <ion-list></ion-list> </ion-col
+                    ></ion-row>
+
+                    <!-- <ion-col size-md="6" offset-md="3" id="expenses-list">
+                        <p class="ion-margin">
+                            Total Expenses: <span id="total-expenses"></span>
+                        </p>
+                    </ion-col> -->
+                </ion-grid>
+            </ion-content>
+            <ion-alert-controller></ion-alert-controller>
+        </ion-app>
+        <script src="script.js"></script>
+        <script src="xmlToJson.js"></script>
+    </body>
+</html>
